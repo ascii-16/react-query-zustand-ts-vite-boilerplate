@@ -4,9 +4,9 @@ import { formatDate } from '@/lib/helper';
 import { useArticlesQuery } from '@/services/queries/article.query';
 import type { Article } from '@/types/article';
 
-type Filter = { page: number; pageSize: number; search?: string };
+export type Filter = { page: number; pageSize: number; search?: string };
 
-interface ArticleListProps {
+export interface ArticleListProps {
   articles: Article[];
 }
 
