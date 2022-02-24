@@ -2,24 +2,23 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import Button from '@/components/Button';
 import Input from '@/components/Input/Input';
-import { useAppDispatch } from '@/hooks/useRedux';
-import useLoading from '@/hooks/useLoading';
-import { LOGIN } from '@/store/actions/auth.actions';
-import authSlice from '@/store/slices/auth.slice';
 import { LoginBody } from '@/types/auth';
 import { loginSchema } from '@/lib/validation';
+import { useLoginQuery } from '@/services/queries/auth.query';
+import { useStore } from '@/store/index';
 
 const Login = () => {
-  const dispatch = useAppDispatch();
-  const isLoading = useLoading(LOGIN);
+  const { setIsAuthenticated } = useStore((state) => state);
+  const { isLoading, mutateAsync: login } = useLoginQuery();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<LoginBody>({ resolver: yupResolver(loginSchema) });
 
-  const onSubmit: SubmitHandler<LoginBody> = (data) => {
-    dispatch(authSlice.actions.login(data));
+  const onSubmit: SubmitHandler<LoginBody> = async (data) => {
+    await login(data);
+    setIsAuthenticated(true);
   };
 
   return (

@@ -1,6 +1,6 @@
 import type { ReactElement } from 'react';
 import { Navigate } from 'react-router';
-import { useAppSelector } from '@/hooks/useRedux';
+import { useStore } from '../store';
 
 interface Props {
   children: ReactElement;
@@ -8,7 +8,7 @@ interface Props {
 
 const PrivateRoute: React.FC<Props> = ({ children }) => {
   // Replace with your auth condition
-  const { isAuthenticated } = useAppSelector((state) => state.auth);
+  const { isAuthenticated } = useStore((state) => state);
 
   return isAuthenticated ? children : <Navigate to="/" />;
 };

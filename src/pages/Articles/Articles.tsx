@@ -1,21 +1,23 @@
-import { useEffect, useState } from 'react';
-import articlesSlice from '@/store/slices/articles.slice';
-import { useAppDispatch, useAppSelector } from '@/hooks/useRedux';
-import { GET_ARTICLES } from '@/store/actions/articles.action';
-import useLoading from '@/hooks/useLoading';
+import { useMemo, useState } from 'react';
 import useDebounce from '@/hooks/useDebounce';
 import { formatDate } from '@/lib/helper';
+import { useArticlesQuery } from '@/services/queries/article.query';
+import type { Article } from '@/types/article';
 
-const Article = () => {
-  const { articles } = useAppSelector((state) => state.articles);
+type Filter = { page: number; pageSize: number; search?: string };
 
+interface ArticleListProps {
+  articles: Article[];
+}
+
+const ArticleList: React.FC<ArticleListProps> = ({ articles }) => {
   if (!articles?.length) {
     return <div>No articles found</div>;
   }
 
   return (
     <>
-      {articles?.map((article) => (
+      {articles.map((article) => (
         <div
           key={article.url}
           className="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3"
@@ -73,33 +75,17 @@ const Article = () => {
 };
 
 const Articles = () => {
-  const dispatch = useAppDispatch();
-  const isLoading = useLoading(GET_ARTICLES);
   const [searchTerm, setSearchTerm] = useState<string>('');
   const debouncedSearchTerm = useDebounce<string>(searchTerm, 500);
-
-  useEffect(() => {
-    dispatch(articlesSlice.actions.getArticles({ page: 1, pageSize: 10 }));
-  }, []);
-
-  useEffect(() => {
-    if (debouncedSearchTerm.length) {
-      dispatch(
-        articlesSlice.actions.getArticles({
-          page: 1,
-          pageSize: 10,
-          search: debouncedSearchTerm,
-        })
-      );
-    } else {
-      dispatch(
-        articlesSlice.actions.getArticles({
-          page: 1,
-          pageSize: 10,
-        })
-      );
-    }
-  }, [debouncedSearchTerm]);
+  const filter = useMemo<Filter>(
+    () => ({
+      page: 1,
+      pageSize: 10,
+      search: debouncedSearchTerm?.length ? debouncedSearchTerm : undefined,
+    }),
+    [debouncedSearchTerm]
+  );
+  const { isLoading, data } = useArticlesQuery(filter);
 
   return (
     <div className="container my-12 mx-auto px-4 md:px-12">
@@ -118,7 +104,11 @@ const Articles = () => {
         </div>
       </div>
       <div className="flex flex-wrap -mx-1 lg:-mx-4">
-        {isLoading ? <div>Loading...</div> : <Article />}
+        {isLoading ? (
+          <div>Loading...</div>
+        ) : (
+          <ArticleList articles={data?.articles ?? []} />
+        )}
       </div>
     </div>
   );

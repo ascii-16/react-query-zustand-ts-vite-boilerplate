@@ -1,10 +1,8 @@
-import authSlice from '@/store/slices/auth.slice';
-import { useAppDispatch, useAppSelector } from '@/hooks/useRedux';
 import Button from '@/components/Button';
+import { useStore } from '@/store/index';
 
 const Header = () => {
-  const dispatch = useAppDispatch();
-  const { isAuthenticated } = useAppSelector((state) => state.auth);
+  const { isAuthenticated, setIsAuthenticated } = useStore((state) => state);
 
   return (
     <nav className="bg-white shadow-lg">
@@ -38,9 +36,7 @@ const Header = () => {
               <Button
                 text="Logout"
                 className="py-3 px-3 font-medium text-white text-xs bg-blue-500 rounded hover:bg-blue-400 transition duration-300"
-                onClick={() =>
-                  dispatch(authSlice.actions.setIsAuthenticated(false))
-                }
+                onClick={() => setIsAuthenticated(false)}
               />
             )}
           </div>
