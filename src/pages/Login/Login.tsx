@@ -6,15 +6,23 @@ import { LoginBody } from '@/types/auth';
 import { loginSchema } from '@/lib/validation';
 import { useLoginQuery } from '@/services/queries/auth.query';
 import { useStore } from '@/store/index';
+import { useEffect } from 'react';
+import { toast } from 'react-toastify';
 
 const Login = () => {
   const { setIsAuthenticated } = useStore((state) => state);
-  const { isLoading, mutateAsync: login } = useLoginQuery();
+  const { isLoading, mutateAsync: login, isError, error } = useLoginQuery();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<LoginBody>({ resolver: yupResolver(loginSchema) });
+
+  useEffect(() => {
+    if (isError) {
+      toast.error(error as string, { theme: 'colored' });
+    }
+  }, [isError]);
 
   const onSubmit: SubmitHandler<LoginBody> = async (data) => {
     await login(data);

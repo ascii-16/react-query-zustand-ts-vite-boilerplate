@@ -19,7 +19,7 @@ const Header = () => {
           </div>
           <div className="hidden md:flex items-center space-x-3 ">
             <a
-              href="https://github.com/akhil-neoito/react-redux-saga-ts-vite-boilerplate"
+              href="https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate"
               className="py-2 px-2 font-medium text-white bg-blue-500 rounded hover:bg-blue-400 transition duration-300"
             >
               <svg
