@@ -1,9 +1,9 @@
-export {};
+/// <reference types="vite/client" />
 
-declare global {
-  namespace NodeJS {
-    interface ProcessEnv {
-      VITE_API_ENDPOINT: string;
-    }
-  }
+interface ImportMetaEnv {
+  readonly VITE_API_ENDPOINT: string;
+}
+
+interface ImportMeta {
+  readonly env: ImportMetaEnv;
 }
