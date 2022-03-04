@@ -1,4 +1,23 @@
+/**
+ * Generic type to create a type that can be null or undefined.
+ * 
+ * @param T The type.
+ * 
+ * @example
+ * type MaybeString = Maybe<string>; // string | null | undefined
+ * 
+ */
 export type Maybe<T> = T | null | undefined;
+
+/**
+ * Generic type to create a type that can be nullified.
+ * 
+ * @param T The type.
+ * 
+ * @example
+ * type NullableString = Nullable<string>; // string | null
+ * 
+ */
 export type Nullable<T> = T | null;
 
 /**
@@ -40,10 +59,3 @@ export type UpperSnakecase<
     ? Uppercase<S>
     : `${Uppercase<FirstWord>}_${Uppercase<Rest>}`
   : never;
-
-// Generic type for generator function that returns void
-export type VoidGenerator<T = unknown, TNext = unknown> = Generator<
-  T,
-  void,
-  TNext
->;
