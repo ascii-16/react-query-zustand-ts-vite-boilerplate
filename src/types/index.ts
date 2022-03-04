@@ -28,11 +28,10 @@ export type DerivedFunction<
  * @param D - Delimiter
  * 
  * @example
- * type upperSnakeCase = toUpperSnakeCase('hello world'); // HELLO_WORLD
- * type upperSnakeCase = toUpperSnakeCase('hello:world | test:arg', ':'); // HELLO_WORLD | TEST_ARG
+ * type NewType = UpperSnakecase<'hello world'>; // HELLO_WORLD
+ * type NewType = UpperSnakecase<'hello:world' | 'test:arg', ':'>; // HELLO_WORLD | TEST_ARG
  * 
  */
-
 export type UpperSnakecase<
   S extends string,
   D extends string = ''
