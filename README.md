@@ -1,6 +1,6 @@
 # Vite Boilerplate
 
-> A React boilerplate with Typescript using Vite. Includes React-query, Zustand, Tailwindcss, EsLint + Prettier, Husky Commit Lint
+A React boilerplate with Typescript using Vite. Includes React-query, Zustand, Tailwindcss, EsLint + Prettier, Husky Commit Lint
 
 ## Installing / Developing
 
