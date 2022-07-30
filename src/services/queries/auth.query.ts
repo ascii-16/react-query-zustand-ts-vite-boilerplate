@@ -1,4 +1,4 @@
-import { useMutation } from 'react-query';
+import { useMutation } from '@tanstack/react-query';
 import type { LoginBody } from '@/types/auth';
 import { login } from '../api/auth.service';
 
