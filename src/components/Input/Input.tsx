@@ -1,16 +1,21 @@
 import { InputHTMLAttributes } from 'react';
-import type { FieldErrors, Path, UseFormRegister } from 'react-hook-form';
+import type {
+  FieldErrors,
+  FieldValues,
+  Path,
+  UseFormRegister,
+} from 'react-hook-form';
 
-export interface Props<T = unknown>
+export interface Props<T = unknown, U extends FieldValues = FieldValues>
   extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
   label?: string;
   disabled?: boolean;
-  errors?: FieldErrors;
   register: UseFormRegister<T>;
+  errors?: FieldErrors<U>;
 }
 
-const Input = <T,>({
+const Input = <T, U>({
   disabled = false,
   placeholder,
   errors,
@@ -19,7 +24,7 @@ const Input = <T,>({
   value,
   register,
   ...rest
-}: Props<T>) => {
+}: Props<T, U>) => {
   return (
     <div className="flex flex-col">
       <label className="flex" htmlFor={name}>
@@ -33,8 +38,8 @@ const Input = <T,>({
         {...register(name as Path<T>)}
         {...rest}
       />
-      {errors && errors[name] && (
-        <span className="">{errors[name].message}</span>
+      {errors && errors[name as keyof U] && (
+        <span className="">{errors[name as keyof U]?.message as string}</span>
       )}
     </div>
   );
