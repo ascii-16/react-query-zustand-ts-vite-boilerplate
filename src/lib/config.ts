@@ -1,1 +1,1 @@
-export const newsApiKey = 'f86040b77923411aa0e8a211627437ce';
+export const newsApiKey = 'pub_97975dc870625c92568f10bdbf1cb8a0f9a9';

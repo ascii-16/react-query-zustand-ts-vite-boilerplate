@@ -5,9 +5,9 @@ import type { GetArticlesProps, GetArticleResponse } from '@/types/article';
 export const getArticles = async (
   params: GetArticlesProps
 ): Promise<GetArticleResponse> => {
-  const { search, page, pageSize } = params;
+  const { search, page } = params;
   const { data } = await axios.get<GetArticleResponse>(
-    `https://newsapi.org/v2/everything?q=${search}&page=${page}&pageSize=${pageSize}&apiKey=${newsApiKey}`
+    `https://newsdata.io/api/1/news?q=${search}&page=${page}&apiKey=${newsApiKey}`
   );
   return data;
 };
