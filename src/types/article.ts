@@ -1,27 +1,26 @@
 export interface GetArticleResponse {
   status: string;
   totalResults: number;
-  articles: Article[];
+  results: Article[];
+  nextPage?: number;
 }
 
 export interface GetArticlesProps {
   search?: string;
   page: number;
-  pageSize: number;
 }
 
 export interface Article {
-  source: Source;
-  author: string;
   title: string;
+  link: string;
+  keywords: string[];
+  creator: string[];
+  video_url?: string;
   description: string;
-  url: string;
-  urlToImage: string;
-  publishedAt: string;
   content: string;
-}
-
-export interface Source {
-  id?: null;
-  name: string;
+  pubDate: string;
+  image_url?: string;
+  source_id: string;
+  country: string[];
+  category: string[];
 }

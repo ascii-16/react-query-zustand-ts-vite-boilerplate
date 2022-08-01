@@ -4,7 +4,7 @@ import { formatDate } from '@/lib/helper';
 import { useArticlesQuery } from '@/services/queries/article.query';
 import type { Article } from '@/types/article';
 
-export type Filter = { page: number; pageSize: number; search?: string };
+export type Filter = { page: number; search?: string };
 
 export interface ArticleListProps {
   articles: Article[];
@@ -19,23 +19,40 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles }) => {
     <>
       {articles.map((article) => (
         <div
-          key={article.url}
+          key={article.link}
           className="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3"
         >
           <article className="overflow-hidden rounded-lg shadow-lg">
-            <a href={article.url} target="_blank" rel="noreferrer">
-              <img
-                alt="Placeholder"
-                className="block h-auto w-full"
-                src={article.urlToImage}
-              />
+            <a href={article.link} target="_blank" rel="noreferrer">
+              {article.image_url ? (
+                <img
+                  alt="Placeholder"
+                  className="block h-auto w-full"
+                  src={article.image_url}
+                />
+              ) : (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-[215px] w-[370px] bg-gray-100"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  />
+                </svg>
+              )}
             </a>
 
             <header className="flex items-center justify-between leading-tight p-2 md:p-4">
               <h1 className="text-lg">
                 <a
                   className="no-underline hover:underline text-black"
-                  href={article.url}
+                  href={article.link}
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -43,7 +60,7 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles }) => {
                 </a>
               </h1>
               <p className="text-grey-darker text-sm">
-                {formatDate(article.publishedAt)}
+                {formatDate(article.pubDate)}
               </p>
             </header>
 
@@ -107,7 +124,7 @@ const Articles = () => {
         {isLoading ? (
           <div>Loading...</div>
         ) : (
-          <ArticleList articles={data?.articles ?? []} />
+          <ArticleList articles={data?.results ?? []} />
         )}
       </div>
     </div>
