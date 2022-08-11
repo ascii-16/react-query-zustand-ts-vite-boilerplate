@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.2 (2022-08-11)
+
+
+### Features
+
+* add type UpperSnakecase ([07661c8](https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate/commit/07661c882b583447697dca4bb1332ae9e0ace969))
+* change api to newsdata.io ([19850df](https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate/commit/19850dffd6a3748dd8b7d7d409bf4fd93cbcd483))
+* integrate pwa ([017fa08](https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate/commit/017fa089e9a3280d60bb0ca10d1b7bb48ee07e67))
+* integrate react-query and zustand ([42a8619](https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate/commit/42a861938e6dab0b735c4f0e7c949b4a2d2edc86))
+* unit test integration ([3f31e14](https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate/commit/3f31e14c25c03bc2f459e26dae4023e3ca94ba3d))
+
+
+### Bug Fixes
+
+* add proper typing for custom env var in import.meta ([19413b1](https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate/commit/19413b1a8c7f126db9e450a279235994e9e671f6))
+* change example for UpperSnakecase ([d6e0e03](https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate/commit/d6e0e03faaf117f402f4b61937826ea3f4013e37))
+* remove unwanted packages ([086f73c](https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate/commit/086f73c866605df8357288080cd246fdb6020a24))
+* toast login error ([75eb585](https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate/commit/75eb58565646aa8f0e45a34bdaa8d89bc7f119c7))
+* types update regarding rhf update ([eefedce](https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate/commit/eefedcec46449abfb26fdecb105961a9e552d512))
+* update env variables to vite's format ([a39781b](https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate/commit/a39781b60d8716b00c6f24547d9abcb46c508ab5))
+
 ### 0.0.1 (2022-02-24)
 
 
