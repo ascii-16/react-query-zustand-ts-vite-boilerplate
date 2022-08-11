@@ -49,5 +49,9 @@
     "typescript": "^4.4.4",
     "vite": "^2.7.2",
     "vite-plugin-pwa": "^0.12.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate.git"
   }
 }
