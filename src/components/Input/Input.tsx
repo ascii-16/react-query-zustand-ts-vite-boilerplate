@@ -6,8 +6,10 @@ import type {
   UseFormRegister,
 } from 'react-hook-form';
 
-export interface Props<T = unknown, U extends FieldValues = FieldValues>
-  extends InputHTMLAttributes<HTMLInputElement> {
+export interface Props<
+  T extends FieldValues = FieldValues,
+  U extends FieldValues = FieldValues
+> extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
   label?: string;
   disabled?: boolean;
@@ -15,7 +17,7 @@ export interface Props<T = unknown, U extends FieldValues = FieldValues>
   errors?: FieldErrors<U>;
 }
 
-const Input = <T, U>({
+const Input = <T extends FieldValues, U extends FieldValues>({
   disabled = false,
   placeholder,
   errors,
