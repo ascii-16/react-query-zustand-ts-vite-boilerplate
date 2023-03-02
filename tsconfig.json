@@ -2,11 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "useDefineForClassFields": true,
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ESNext"
-    ],
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": false,
     "skipLibCheck": true,
     "esModuleInterop": false,
@@ -18,37 +14,18 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "types": [
-      "node",
-      "jest",
-    ],
+    "types": ["node", "jest"],
     "jsx": "react-jsx",
     "baseUrl": "src",
     "paths": {
-      "@/components/*": [
-        "components/*"
-      ],
-      "@/pages/*": [
-        "pages/*"
-      ],
-      "@/lib/*": [
-        "lib/*"
-      ],
-      "@/types/*": [
-        "types/*"
-      ],
-      "@/hooks/*": [
-        "hooks/*"
-      ],
-      "@/store/*": [
-        "store/*"
-      ],
-      "@/services/*": [
-        "services/*"
-      ]
+      "@/components/*": ["components/*"],
+      "@/pages/*": ["pages/*"],
+      "@/lib/*": ["lib/*"],
+      "@/types/*": ["types/*"],
+      "@/hooks/*": ["hooks/*"],
+      "@/store/*": ["store/*"],
+      "@/services/*": ["services/*"]
     }
   },
-  "include": [
-    "./src"
-  ]
+  "include": ["./src"]
 }
