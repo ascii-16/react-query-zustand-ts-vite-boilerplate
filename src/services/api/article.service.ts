@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { newsApiKey } from '@/lib/config';
-import type { GetArticlesProps, GetArticleResponse } from '@/types/article';
+import { type GetArticlesProps, GetArticleResponse } from '@/types/article';
 
 export const getArticles = async (
   params: GetArticlesProps

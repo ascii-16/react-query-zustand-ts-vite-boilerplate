@@ -1,6 +1,6 @@
 import { InputHTMLAttributes } from 'react';
-import type {
-  FieldErrors,
+import {
+  type FieldErrors,
   FieldValues,
   Path,
   UseFormRegister,

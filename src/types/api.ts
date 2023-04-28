@@ -1,4 +1,4 @@
-import type { AxiosResponse } from 'axios';
+import { type AxiosResponse } from 'axios';
 
 /**
  * Assumes that the response from the API is an object with the following structure:

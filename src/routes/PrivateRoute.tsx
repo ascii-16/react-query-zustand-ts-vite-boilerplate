@@ -1,4 +1,4 @@
-import type { ReactElement } from 'react';
+import { type ReactElement } from 'react';
 import { Navigate } from 'react-router';
 import useAuthStore from '@/store/useAuthStore';
 
