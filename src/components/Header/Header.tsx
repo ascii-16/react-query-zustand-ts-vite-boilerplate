@@ -1,8 +1,10 @@
 import Button from '@/components/Button';
-import { useStore } from '@/store/index';
+import useAuthStore from '@/store/useAuthStore';
 
 const Header = () => {
-  const { isAuthenticated, setIsAuthenticated } = useStore((state) => state);
+  const { isAuthenticated, setIsAuthenticated } = useAuthStore(
+    (state) => state
+  );
 
   return (
     <nav className="bg-white shadow-lg">

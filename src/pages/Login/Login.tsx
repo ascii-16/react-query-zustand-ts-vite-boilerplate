@@ -5,12 +5,12 @@ import Input from '@/components/Input/Input';
 import { LoginBody } from '@/types/auth';
 import { loginSchema } from '@/lib/validation';
 import { useLoginQuery } from '@/services/queries/auth.query';
-import { useStore } from '@/store/index';
+import useAuthStore from '@/store/useAuthStore';
 import { useEffect } from 'react';
 import { toast } from 'react-toastify';
 
 const Login = () => {
-  const { setIsAuthenticated } = useStore((state) => state);
+  const { setIsAuthenticated } = useAuthStore((state) => state);
   const { isLoading, mutateAsync: login, isError, error } = useLoginQuery();
   const {
     register,
