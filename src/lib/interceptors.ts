@@ -2,7 +2,6 @@ import {
   InternalAxiosRequestConfig,
   type AxiosError,
   type AxiosHeaders,
-  type AxiosRequestConfig,
   type AxiosResponse,
 } from 'axios';
 
