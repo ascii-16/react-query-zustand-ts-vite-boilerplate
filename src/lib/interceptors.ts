@@ -1,7 +1,6 @@
 import {
   InternalAxiosRequestConfig,
   type AxiosError,
-  type AxiosHeaders,
   type AxiosResponse,
 } from 'axios';
 
@@ -15,7 +14,7 @@ export const requestInterceptor = (
 ): InternalAxiosRequestConfig => {
   const token = '';
   if (token) {
-    (config.headers as AxiosHeaders).set('Authorization', `Bearer ${token}`);
+    config.headers.set('Authorization', `Bearer ${token}`);
   }
   return config;
 };
