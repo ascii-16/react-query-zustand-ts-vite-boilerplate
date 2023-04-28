@@ -8,7 +8,7 @@
     "build": "tsc && npm run build:css && vite build",
     "preview": "vite preview",
     "lint": "eslint --ignore-path .eslintignore --ext .ts,.tsx .",
-    "format": "prettier --ignore-path .gitignore --write \"**/*.+(ts|tsx|json)\"",
+    "format": "prettier --ignore-path .prettierignore --write \"**/*.+(ts|tsx|json)\"",
     "test": "jest",
     "release": "standard-version"
   },
