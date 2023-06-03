@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate/compare/v0.0.3...v0.0.4) (2023-06-03)
+
+
+### Features
+
+* **axios:** add instance with interceptors ([a4f7298](https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate/commit/a4f7298e6d5b4ac02f0926658779e0063276bb03))
+
+
+### Bug Fixes
+
+* **husky:** pre-commit ([4c713c5](https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate/commit/4c713c59cebd263991ce8e2d1817a5832d9764c6))
+
 ### [0.0.3](https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate/compare/v0.0.2...v0.0.3) (2023-04-28)
 
 
