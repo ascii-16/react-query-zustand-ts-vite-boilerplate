@@ -17,7 +17,7 @@ const useAuthStore = create<AuthStore>()(
   logger<AuthStore>(
     (set) => ({
       ...initialState,
-      setIsAuthenticated: (isAuthenticated) => {
+      setIAuthenticated: (isAuthenticated) => {
         set(() => ({ isAuthenticated }));
       },
     }),
