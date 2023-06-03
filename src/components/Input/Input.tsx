@@ -1,9 +1,9 @@
-import { InputHTMLAttributes } from 'react';
+import { type InputHTMLAttributes } from 'react';
 import {
   type FieldErrors,
-  FieldValues,
-  Path,
-  UseFormRegister,
+  type FieldValues,
+  type Path,
+  type UseFormRegister,
 } from 'react-hook-form';
 
 export interface Props<

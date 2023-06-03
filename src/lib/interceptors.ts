@@ -1,7 +1,7 @@
 import {
-  InternalAxiosRequestConfig,
   type AxiosError,
   type AxiosResponse,
+  type InternalAxiosRequestConfig,
 } from 'axios';
 
 export interface ConsoleError {
@@ -12,7 +12,7 @@ export interface ConsoleError {
 export const requestInterceptor = (
   config: InternalAxiosRequestConfig
 ): InternalAxiosRequestConfig => {
-  const token = '';
+  const token: string | undefined = '';
   if (token) {
     config.headers.set('Authorization', `Bearer ${token}`);
   }

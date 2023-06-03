@@ -115,7 +115,7 @@ const Articles = () => {
               placeholder="Enter search term"
               aria-label="Search"
               aria-describedby="button-addon3"
-              onChange={(e) => setSearchTerm(e.target.value)}
+              onChange={(e) => { setSearchTerm(e.target.value); }}
             />
           </div>
         </div>

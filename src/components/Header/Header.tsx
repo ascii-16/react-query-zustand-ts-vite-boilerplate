@@ -38,7 +38,7 @@ const Header = () => {
               <Button
                 text="Logout"
                 className="py-3 px-3 font-medium text-white text-xs bg-blue-500 rounded hover:bg-blue-400 transition duration-300"
-                onClick={() => setIsAuthenticated(false)}
+                onClick={() => { setIsAuthenticated(false); }}
               />
             )}
           </div>
@@ -46,7 +46,6 @@ const Header = () => {
             <button className="outline-none mobile-menu-button">
               <svg
                 className=" w-6 h-6 text-gray-500 hover:text-blue-500 "
-                x-show="!showMenu"
                 fill="none"
                 strokeLinecap="round"
                 strokeLinejoin="round"

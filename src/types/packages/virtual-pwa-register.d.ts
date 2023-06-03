@@ -1,7 +1,7 @@
 declare module 'virtual:pwa-register/react' {
   // @ts-expect-error ignore when react is not installed
   // @ref: https://vite-plugin-pwa.netlify.app/frameworks/react.html
-  import { type Dispatch, SetStateAction } from 'react';
+  import { type Dispatch, type SetStateAction } from 'react';
 
   export interface RegisterSWOptions {
     immediate?: boolean;

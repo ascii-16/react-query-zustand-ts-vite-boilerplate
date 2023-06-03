@@ -1,13 +1,13 @@
-import { useForm, SubmitHandler } from 'react-hook-form';
+import { useEffect } from 'react';
+import { type SubmitHandler,useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 import { yupResolver } from '@hookform/resolvers/yup';
 import Button from '@/components/Button';
 import Input from '@/components/Input/Input';
-import { LoginBody } from '@/types/auth';
 import { loginSchema } from '@/lib/validation';
 import { useLoginQuery } from '@/services/queries/auth.query';
 import useAuthStore from '@/store/useAuthStore';
-import { useEffect } from 'react';
-import { toast } from 'react-toastify';
+import { type LoginBody } from '@/types/auth';
 
 const Login = () => {
   const { setIsAuthenticated } = useAuthStore((state) => state);
