@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { type SubmitHandler,useForm } from 'react-hook-form';
+import { type SubmitHandler, useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { yupResolver } from '@hookform/resolvers/yup';
 import Button from '@/components/Button';

@@ -38,7 +38,9 @@ const Header = () => {
               <Button
                 text="Logout"
                 className="py-3 px-3 font-medium text-white text-xs bg-blue-500 rounded hover:bg-blue-400 transition duration-300"
-                onClick={() => { setIsAuthenticated(false); }}
+                onClick={() => {
+                  setIsAuthenticated(false);
+                }}
               />
             )}
           </div>

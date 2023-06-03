@@ -11,7 +11,14 @@
     "lint:fix": "eslint --ignore-path .eslintignore --fix ./ --ext .ts,.tsx",
     "format": "prettier --ignore-path .prettierignore --write \"**/*.+(ts|tsx|json)\"",
     "test": "jest",
-    "release": "standard-version"
+    "release": "standard-version",
+    "prepare": "node -e \"if (process.env.NODE_ENV !== 'production'){process.exit(1)} \" || husky install"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "npm run lint:fix",
+      "npm run format"
+    ]
   },
   "dependencies": {
     "@hookform/resolvers": "^3.1.0",

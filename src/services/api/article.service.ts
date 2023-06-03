@@ -1,6 +1,9 @@
 import { api } from '@/lib/api';
 import { newsApiKey } from '@/lib/config';
-import { type GetArticleResponse,type GetArticlesProps } from '@/types/article';
+import {
+  type GetArticleResponse,
+  type GetArticlesProps,
+} from '@/types/article';
 
 export const getArticles = async (
   params: GetArticlesProps

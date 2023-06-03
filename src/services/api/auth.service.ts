@@ -7,7 +7,9 @@ export const login = async (body: LoginBody) => {
       reject(new Error('Invalid username or password'));
     }
 
-    setTimeout(() => { resolve(true); }, 2000);
+    setTimeout(() => {
+      resolve(true);
+    }, 2000);
   });
   return await res;
 };
