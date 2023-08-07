@@ -112,10 +112,13 @@ public/
 
 ## Features
 
-- **React Query**: Helps in fetching, caching, and updating asynchronous data.
-- **Zustand**: For simple and scalable state management.
-- **TypeScript**: For type-safe code and scalability.
-- **Vite**: For faster builds and a smoother developer experience.
+| Tool/Library | Description                                                    |
+|--------------|----------------------------------------------------------------|
+| React Query  | Helps in fetching, caching, and updating asynchronous data.    |
+| Zustand      | For simple and scalable state management.                      |
+| TypeScript   | For type-safe code and scalability.                            |
+| Vite         | For faster builds and a smoother developer experience.         |
+
 
 ## Contribution
 
