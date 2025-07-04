@@ -14,8 +14,8 @@ const useAuthStore = create<AuthState>()(
         set({ isAuthenticated });
       },
     }),
-    'authStore',
-  ),
+    'authStore'
+  )
 );
 
 export default useAuthStore;

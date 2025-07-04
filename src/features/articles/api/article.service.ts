@@ -6,13 +6,13 @@ import {
 } from '../types/article';
 
 export const getArticles = async (
-  params: GetArticlesProps,
+  params: GetArticlesProps
 ): Promise<GetArticleResponse> => {
   const { search, page } = params;
   const { data } = await api.get<GetArticleResponse>(
     `https://newsdata.io/api/1/news?q=${
       search ?? ''
-    }&page=${page}&apiKey=${newsApiKey}`,
+    }&page=${page}&apiKey=${newsApiKey}`
   );
   return data;
 };

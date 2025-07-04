@@ -100,7 +100,7 @@ const ArticlesPage = () => {
       pageSize: 10,
       search: debouncedSearchTerm?.length ? debouncedSearchTerm : undefined,
     }),
-    [debouncedSearchTerm],
+    [debouncedSearchTerm]
   );
   const { isLoading, data } = useArticlesQuery(filter);
 

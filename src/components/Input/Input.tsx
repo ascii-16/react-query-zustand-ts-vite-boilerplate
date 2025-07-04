@@ -8,7 +8,7 @@ import {
 
 export interface Props<
   T extends FieldValues = FieldValues,
-  U extends FieldValues = FieldValues
+  U extends FieldValues = FieldValues,
 > extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
   label?: string;

@@ -35,7 +35,7 @@ export type Nullable<T> = T | null;
 export type DerivedFunction<
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   BaseFunction extends (...args: any[]) => unknown,
-  T extends unknown[] = unknown[]
+  T extends unknown[] = unknown[],
 > = BaseFunction extends (...a: infer U) => infer R
   ? (...a: [...U, ...T]) => R
   : never;
@@ -53,7 +53,7 @@ export type DerivedFunction<
  */
 export type UpperSnakecase<
   S extends string,
-  D extends string = ''
+  D extends string = '',
 > = S extends `${infer FirstWord}${D}${infer Rest}`
   ? D extends ''
     ? Uppercase<S>

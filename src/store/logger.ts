@@ -32,7 +32,7 @@ const defaultConfig: LoggerConfig = {
 
 export const logger = <T extends Record<string, unknown>>(
   initializer: StateCreator<T>,
-  name?: string,
+  name?: string
 ): StateCreator<T> => {
   const config = { ...defaultConfig, name: name || defaultConfig.name };
 
@@ -71,7 +71,7 @@ export const logger = <T extends Record<string, unknown>>(
         console.error(
           `%c${config.name} Error`,
           `color: ${config.colors?.error}`,
-          error,
+          error
         );
         throw error;
       }
@@ -119,7 +119,7 @@ function logStateChange<T extends Record<string, unknown>>({
 
 function diff<T extends Record<string, unknown>>(
   prev: T,
-  next: T,
+  next: T
 ): Record<keyof T, { from: unknown; to: unknown }> {
   const changes: Partial<Record<keyof T, { from: unknown; to: unknown }>> = {};
 
