@@ -2,31 +2,25 @@ import { create } from 'zustand';
 import { getItem, setItem } from '@/lib/localStorage';
 import { logger } from './logger';
 
-interface GlobalState {
+type GlobalState = {
   isMenuOpen: boolean;
-}
-
-export interface GlobalStore extends GlobalState {
   toggleMenu: () => void;
-}
-
-const initialState: Pick<GlobalStore, keyof GlobalState> = {
-  isMenuOpen: getItem('isMenuOpen') ?? false,
 };
 
-const useGlobalStore = create<GlobalStore>()(
-  logger<GlobalStore>(
+const useGlobalStore = create<GlobalState>()(
+  logger<GlobalState>(
     (set) => ({
-      ...initialState,
+      isMenuOpen: getItem('isMenuOpen') ?? false,
       toggleMenu: () => {
         set((state) => {
-          setItem('isMenuOpen', !state.isMenuOpen);
-          return { isMenuOpen: !state.isMenuOpen };
+          const newIsMenuOpen = !state.isMenuOpen;
+          setItem('isMenuOpen', newIsMenuOpen);
+          return { isMenuOpen: newIsMenuOpen };
         });
       },
     }),
-    'globalStore'
-  )
+    'globalStore',
+  ),
 );
 
 export default useGlobalStore;
