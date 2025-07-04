@@ -3,13 +3,13 @@ import { toast } from 'react-toastify';
 import { yupResolver } from '@hookform/resolvers/yup';
 import Button from '@/components/Button';
 import Input from '@/components/Input/Input';
-import { loginSchema } from '@/lib/validation';
+import { loginSchema } from '../validation/validation';
 import useAuthStore from '@/store/useAuthStore';
-import { type LoginBody } from '@/types/auth';
+import { type LoginBody } from '../types/auth';
 import { useMutation } from '@tanstack/react-query';
-import { login } from '@/services/api/auth.service';
+import { login } from '../api/auth.service';
 
-const Login = () => {
+const LoginPage = () => {
   const { setIsAuthenticated } = useAuthStore((state) => state);
   const {
     register,
@@ -59,4 +59,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginPage;

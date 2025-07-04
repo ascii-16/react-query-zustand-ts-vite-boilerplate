@@ -1,8 +1,8 @@
 import { useMemo, useState } from 'react';
 import useDebounce from '@/hooks/useDebounce';
 import { formatDate } from '@/lib/helper';
-import { useArticlesQuery } from '@/services/queries/article.query';
-import { type Article } from '@/types/article';
+import { useArticlesQuery } from '../queries/article.query';
+import { type Article } from '../types/article';
 
 export type Filter = { page: number; search?: string };
 
@@ -91,7 +91,7 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles }) => {
   );
 };
 
-const Articles = () => {
+const ArticlesPage = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const debouncedSearchTerm = useDebounce<string>(searchTerm, 500);
   const filter = useMemo<Filter>(
@@ -100,7 +100,7 @@ const Articles = () => {
       pageSize: 10,
       search: debouncedSearchTerm?.length ? debouncedSearchTerm : undefined,
     }),
-    [debouncedSearchTerm]
+    [debouncedSearchTerm],
   );
   const { isLoading, data } = useArticlesQuery(filter);
 
@@ -133,4 +133,4 @@ const Articles = () => {
   );
 };
 
-export default Articles;
+export default ArticlesPage;

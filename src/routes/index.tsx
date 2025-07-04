@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Articles from '../pages/Articles';
-import Home from '../pages/Home';
+import Articles from '@/features/articles/pages';
+import Home from '@/features/home/pages';
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
 
