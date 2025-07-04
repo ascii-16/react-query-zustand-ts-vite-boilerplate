@@ -3,7 +3,7 @@ import useAuthStore from '@/store/useAuthStore';
 
 const Header = () => {
   const { isAuthenticated, setIsAuthenticated } = useAuthStore(
-    (state) => state
+    (state) => state,
   );
 
   return (
@@ -12,11 +12,11 @@ const Header = () => {
         <div className="flex justify-between">
           <div className="flex space-x-7">
             <div>
-              <a href="#" className="flex items-center py-4 px-2">
+              <button type="button" className="flex items-center py-4 px-2">
                 <span className="font-semibold text-gray-500 text-lg">
                   Boilerplate
                 </span>
-              </a>
+              </button>
             </div>
           </div>
           <div className="hidden md:flex items-center space-x-3 ">

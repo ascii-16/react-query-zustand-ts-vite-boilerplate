@@ -1,28 +1,21 @@
 import { create } from 'zustand';
 import { logger } from './logger';
 
-interface AuthState {
+type AuthState = {
   isAuthenticated: boolean;
-}
-
-export interface AuthStore extends AuthState {
-  setIsAuthenticated: (args: AuthState['isAuthenticated']) => void;
-}
-
-const initialState: Pick<AuthStore, keyof AuthState> = {
-  isAuthenticated: true,
+  setIsAuthenticated: (isAuthenticated: boolean) => void;
 };
 
-const useAuthStore = create<AuthStore>()(
-  logger<AuthStore>(
+const useAuthStore = create<AuthState>()(
+  logger<AuthState>(
     (set) => ({
-      ...initialState,
+      isAuthenticated: true,
       setIsAuthenticated: (isAuthenticated) => {
-        set(() => ({ isAuthenticated }));
+        set({ isAuthenticated });
       },
     }),
-    'authStore'
-  )
+    'authStore',
+  ),
 );
 
 export default useAuthStore;

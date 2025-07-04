@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 declare module 'virtual:pwa-register/react' {
   // @ts-expect-error ignore when react is not installed
   // @ref: https://vite-plugin-pwa.netlify.app/frameworks/react.html
@@ -8,7 +9,7 @@ declare module 'virtual:pwa-register/react' {
     onNeedRefresh?: () => void;
     onOfflineReady?: () => void;
     onRegistered?: (
-      registration: ServiceWorkerRegistration | undefined
+      registration: ServiceWorkerRegistration | undefined,
     ) => void;
     onRegisterError?: (error: any) => void;
   }

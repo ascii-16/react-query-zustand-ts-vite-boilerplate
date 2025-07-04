@@ -13,7 +13,7 @@ describe('login', () => {
       const body = { username: 'user', password: 'wrong' };
       await login(body);
     } catch (err) {
-      expect(err).toMatch('Invalid username or password');
+      expect((err as Error).message).toMatch('Invalid username or password');
     }
   });
 });
