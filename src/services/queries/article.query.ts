@@ -1,12 +1,13 @@
 import { useQuery } from '@tanstack/react-query';
-import {
-  type GetArticleResponse,
-  type GetArticlesProps,
-} from '@/types/article';
+import { type GetArticlesProps } from '@/types/article';
 import { getArticles } from '../api/article.service';
 
-export const useArticlesQuery = (params: GetArticlesProps) =>
-  useQuery<GetArticleResponse>(['getArticles', { params }], async () => {
-    const res = await getArticles(params);
-    return res;
+export const useArticlesQuery = (params: GetArticlesProps) => {
+  return useQuery({
+    queryKey: ['getArticles', params],
+    queryFn: async () => {
+      const res = await getArticles(params);
+      return res;
+    },
   });
+};
