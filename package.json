@@ -7,7 +7,7 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "format": "prettier --write .",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json}\"",
     "test": "jest",
     "release": "standard-version",
     "commit": "git-cz",
