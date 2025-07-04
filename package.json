@@ -2,10 +2,8 @@
   "name": "react-redux-saga-ts-vite-boilerplate",
   "version": "0.0.4",
   "scripts": {
-    "start": "npm run build:css && concurrently \"npm run watch:css\" \"vite\"",
-    "watch:css": "npx tailwindcss -i ./src/index.css -o ./src/styles.css --watch",
-    "build:css": "npx tailwindcss -i ./src/index.css -o ./src/styles.css",
-    "build": "tsc && npm run build:css && vite build",
+    "dev": "vite",
+    "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint --ignore-path .eslintignore ./ --ext .ts,.tsx",
     "lint:fix": "eslint --ignore-path .eslintignore --fix ./ --ext .ts,.tsx",
@@ -17,8 +15,8 @@
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
-      "npm run lint:fix",
-      "npm run format"
+      "pnpm lint:fix",
+      "pnpm format"
     ]
   },
   "dependencies": {
@@ -39,6 +37,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.6.1",
     "@commitlint/config-conventional": "^17.6.1",
+    "@tailwindcss/vite": "^4.1.11",
     "@types/jest": "^29.5.1",
     "@types/node": "^18.16.0",
     "@types/react": "^18.0.38",
@@ -59,6 +58,7 @@
     "prettier": "^2.8.8",
     "sass": "^1.62.0",
     "standard-version": "^9.5.0",
+    "tailwindcss": "^4.1.11",
     "ts-jest": "^29.1.0",
     "typescript": "^5.0.4",
     "vite": "^4.3.1",
