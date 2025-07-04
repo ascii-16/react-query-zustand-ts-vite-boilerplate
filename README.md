@@ -47,7 +47,7 @@ cd react-query-zustand-ts-vite-boilerplate
 ### Installing Dependencies
 
 ```
-npm install
+pnpm install
 ```
 
 ### Running Locally
@@ -55,7 +55,7 @@ npm install
 To run the project locally, simply execute:
 
 ```
-npm run dev
+pnpm run dev
 ```
 
 ## Scripts
