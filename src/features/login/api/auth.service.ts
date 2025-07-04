@@ -1,4 +1,4 @@
-import { type LoginBody } from '@/types/auth';
+import { type LoginBody } from '../types/auth';
 
 // Dummy login request that will resolve in 2 seconds
 export const login = async (body: LoginBody) => {

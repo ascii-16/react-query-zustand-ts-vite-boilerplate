@@ -34,7 +34,7 @@ const Button: React.FC<ButtonProps> = ({
   ...props
 }) => (
   <button type="button" className={className ?? defaultClasses} {...props}>
-    {isLoading ? <Spinner /> : children ?? text}
+    {isLoading ? <Spinner /> : (children ?? text)}
   </button>
 );
 

@@ -3,7 +3,7 @@ import { newsApiKey } from '@/lib/config';
 import {
   type GetArticleResponse,
   type GetArticlesProps,
-} from '@/types/article';
+} from '../types/article';
 
 export const getArticles = async (
   params: GetArticlesProps

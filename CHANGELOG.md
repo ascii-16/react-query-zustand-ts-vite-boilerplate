@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.8](https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate/compare/v0.0.7...v0.0.8) (2025-07-04)
+
+### [0.0.7](https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate/compare/v0.0.6...v0.0.7) (2025-07-04)
+
+### [0.0.6](https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate/compare/v0.0.5...v0.0.6) (2025-07-04)
+
+
+### Features
+
+* new feature folder ([f3d2929](https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate/commit/f3d292949f3056700f3ddd1a0cb49885f4c6dbff))
+* new feature folder ([4b77b51](https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate/commit/4b77b51a70882224bf978483951acd4997d9b831))
+
 ### [0.0.5](https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate/compare/v0.0.4...v0.0.5) (2025-07-04)
 
 

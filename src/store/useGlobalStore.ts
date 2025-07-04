@@ -19,8 +19,8 @@ const useGlobalStore = create<GlobalState>()(
         });
       },
     }),
-    'globalStore',
-  ),
+    'globalStore'
+  )
 );
 
 export default useGlobalStore;

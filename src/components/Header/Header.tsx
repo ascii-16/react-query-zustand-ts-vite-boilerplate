@@ -3,7 +3,7 @@ import useAuthStore from '@/store/useAuthStore';
 
 const Header = () => {
   const { isAuthenticated, setIsAuthenticated } = useAuthStore(
-    (state) => state,
+    (state) => state
   );
 
   return (
