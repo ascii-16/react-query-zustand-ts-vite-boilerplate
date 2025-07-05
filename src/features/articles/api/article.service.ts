@@ -23,7 +23,7 @@ export async function getArticles(
     country: ['us'],
     category: ['technology'],
     keywords: ['mock'],
-    image_url: `https://via.placeholder.com/600x400?text=Article+${i + 1}`,
+    image_url: 'https://placehold.co/600x400',
   });
 
   const results = Array.from({ length: 10 }, (_, i) =>
