@@ -4,7 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import Button from '@/components/ui/button';
 import Input from '@/components/ui/input';
 import { loginSchema } from '../validation/validation';
-import useAuthStore from '@/store/useAuthStore';
+import useAuthStore from '@/store/auth-store';
 import { type LoginBody } from '../types/auth';
 import { useMutation } from '@tanstack/react-query';
 import { login } from '../api/auth.service';

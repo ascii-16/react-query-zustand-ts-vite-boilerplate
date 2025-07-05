@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import useDebounce from '@/hooks/useDebounce';
+import useDebounce from '@/hooks/use-debounce';
 import { formatDate } from '@/lib/helper';
 import { useArticlesQuery } from '../queries/article.query';
 import { type Article } from '../types/article';

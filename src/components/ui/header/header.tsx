@@ -1,5 +1,5 @@
 import Button from '@/components/ui/button';
-import useAuthStore from '@/store/useAuthStore';
+import useAuthStore from '@/store/auth-store';
 
 const Header = () => {
   const { isAuthenticated, setIsAuthenticated } = useAuthStore(
