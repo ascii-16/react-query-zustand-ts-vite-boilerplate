@@ -3,11 +3,10 @@ import { toast } from 'react-toastify';
 import { yupResolver } from '@hookform/resolvers/yup';
 import Button from '@/components/ui/button';
 import Input from '@/components/ui/input';
-import { loginSchema } from '../validation/validation';
+import { loginSchema } from '../validation/login-schema';
 import useAuthStore from '@/store/auth-store';
 import { type LoginBody } from '../types/auth';
-import { useMutation } from '@tanstack/react-query';
-import { login } from '../api/auth.service';
+import { useLoginMutation } from '../hooks/use-login-mutation';
 
 export default function LoginPage() {
   const { setIsAuthenticated } = useAuthStore((state) => state);
@@ -17,8 +16,7 @@ export default function LoginPage() {
     formState: { errors },
   } = useForm<LoginBody>({ resolver: yupResolver(loginSchema) });
 
-  const mutation = useMutation({
-    mutationFn: (body: LoginBody) => login(body),
+  const mutation = useLoginMutation({
     onSuccess: () => {
       setIsAuthenticated(true);
     },

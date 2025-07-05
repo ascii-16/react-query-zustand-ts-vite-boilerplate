@@ -1,10 +1,8 @@
 import { useMemo, useState } from 'react';
 import useDebounce from '@/hooks/use-debounce';
 import { formatDate } from '@/lib/helper';
-import { useArticlesQuery } from '../queries/article.query';
-import { type Article } from '../types/article';
-
-export type Filter = { page: number; search?: string };
+import { useGetArticlesQuery } from '../hooks/use-get-articles-query';
+import { GetArticlesProps, type Article } from '../types/article';
 
 export interface ArticleListProps {
   articles: Article[];
@@ -94,7 +92,7 @@ function ArticleList({ articles }: ArticleListProps) {
 function ArticlesPage() {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const debouncedSearchTerm = useDebounce<string>(searchTerm, 500);
-  const filter = useMemo<Filter>(
+  const filter = useMemo<GetArticlesProps>(
     () => ({
       page: 1,
       pageSize: 10,
@@ -102,7 +100,7 @@ function ArticlesPage() {
     }),
     [debouncedSearchTerm]
   );
-  const { isLoading, data } = useArticlesQuery(filter);
+  const { isLoading, data } = useGetArticlesQuery(filter);
 
   return (
     <div className="container my-12 mx-auto px-4 md:px-12">
