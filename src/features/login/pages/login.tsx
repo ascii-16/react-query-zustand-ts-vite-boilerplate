@@ -1,8 +1,8 @@
 import { type SubmitHandler, useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { yupResolver } from '@hookform/resolvers/yup';
-import Button from '@/components/Button';
-import Input from '@/components/Input/Input';
+import Button from '@/components/ui/button';
+import Input from '@/components/ui/input';
 import { loginSchema } from '../validation/validation';
 import useAuthStore from '@/store/useAuthStore';
 import { type LoginBody } from '../types/auth';
