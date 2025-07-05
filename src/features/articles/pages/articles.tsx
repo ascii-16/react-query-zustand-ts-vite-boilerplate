@@ -10,7 +10,7 @@ export interface ArticleListProps {
   articles: Article[];
 }
 
-const ArticleList: React.FC<ArticleListProps> = ({ articles }) => {
+function ArticleList({ articles }: ArticleListProps) {
   if (!articles?.length) {
     return <div>No articles found</div>;
   }
@@ -89,9 +89,9 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles }) => {
       ))}
     </>
   );
-};
+}
 
-const ArticlesPage = () => {
+function ArticlesPage() {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const debouncedSearchTerm = useDebounce<string>(searchTerm, 500);
   const filter = useMemo<Filter>(
@@ -131,6 +131,6 @@ const ArticlesPage = () => {
       </div>
     </div>
   );
-};
+}
 
 export default ArticlesPage;

@@ -26,16 +26,16 @@ const defaultClasses = `
     min-w-[100px]
   `;
 
-const Button: React.FC<ButtonProps> = ({
+export default function Button({
   text,
   isLoading,
   className,
   children,
   ...props
-}) => (
-  <button type="button" className={className ?? defaultClasses} {...props}>
-    {isLoading ? <Spinner /> : (children ?? text)}
-  </button>
-);
-
-export default Button;
+}: ButtonProps) {
+  return (
+    <button type="button" className={className ?? defaultClasses} {...props}>
+      {isLoading ? <Spinner /> : (children ?? text)}
+    </button>
+  );
+}

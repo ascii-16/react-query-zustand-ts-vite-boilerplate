@@ -1,5 +1,5 @@
 import classes from './Spinner.module.scss';
 
-const Spinner = () => <div className={classes.loader} />;
-
-export default Spinner;
+export default function Spinner() {
+  return <div className={classes.loader} />;
+}

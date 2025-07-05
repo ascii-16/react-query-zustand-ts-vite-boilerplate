@@ -9,7 +9,7 @@ import { type LoginBody } from '../types/auth';
 import { useMutation } from '@tanstack/react-query';
 import { login } from '../api/auth.service';
 
-const LoginPage = () => {
+export default function LoginPage() {
   const { setIsAuthenticated } = useAuthStore((state) => state);
   const {
     register,
@@ -57,6 +57,4 @@ const LoginPage = () => {
       <Button text="Login" type="submit" isLoading={mutation.isPending} />
     </form>
   );
-};
-
-export default LoginPage;
+}
