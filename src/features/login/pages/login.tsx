@@ -1,15 +1,14 @@
 import { type SubmitHandler, useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { yupResolver } from '@hookform/resolvers/yup';
-import Button from '@/components/Button';
-import Input from '@/components/Input/Input';
-import { loginSchema } from '../validation/validation';
-import useAuthStore from '@/store/useAuthStore';
+import Button from '@/components/ui/button';
+import Input from '@/components/ui/input';
+import { loginSchema } from '../validation/login-schema';
+import useAuthStore from '@/store/auth-store';
 import { type LoginBody } from '../types/auth';
-import { useMutation } from '@tanstack/react-query';
-import { login } from '../api/auth.service';
+import { useLoginMutation } from '../hooks/use-login-mutation';
 
-const LoginPage = () => {
+export default function LoginPage() {
   const { setIsAuthenticated } = useAuthStore((state) => state);
   const {
     register,
@@ -17,8 +16,7 @@ const LoginPage = () => {
     formState: { errors },
   } = useForm<LoginBody>({ resolver: yupResolver(loginSchema) });
 
-  const mutation = useMutation({
-    mutationFn: (body: LoginBody) => login(body),
+  const mutation = useLoginMutation({
     onSuccess: () => {
       setIsAuthenticated(true);
     },
@@ -57,6 +55,4 @@ const LoginPage = () => {
       <Button text="Login" type="submit" isLoading={mutation.isPending} />
     </form>
   );
-};
-
-export default LoginPage;
+}

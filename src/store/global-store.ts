@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { getItem, setItem } from '@/lib/localStorage';
+import { getItem, setItem } from '@/lib/local-storage';
 import { logger } from './logger';
 
 type GlobalState = {

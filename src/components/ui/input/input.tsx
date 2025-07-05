@@ -17,7 +17,7 @@ export interface Props<
   errors?: FieldErrors<U>;
 }
 
-const Input = <T extends FieldValues, U extends FieldValues>({
+export default function Input<T extends FieldValues, U extends FieldValues>({
   disabled = false,
   placeholder,
   errors,
@@ -26,7 +26,7 @@ const Input = <T extends FieldValues, U extends FieldValues>({
   value,
   register,
   ...rest
-}: Props<T, U>) => {
+}: Props<T, U>) {
   return (
     <div className="flex flex-col">
       <label className="flex" htmlFor={name}>
@@ -45,6 +45,4 @@ const Input = <T extends FieldValues, U extends FieldValues>({
       )}
     </div>
   );
-};
-
-export default Input;
+}

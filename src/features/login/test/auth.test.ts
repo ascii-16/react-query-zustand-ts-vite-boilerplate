@@ -1,4 +1,4 @@
-import { login } from '@/features/login/api/auth.service';
+import { login } from '@/features/login/services/auth-service';
 
 describe('login', () => {
   it('should return true on successfull login', async () => {

@@ -1,16 +1,14 @@
 import { useMemo, useState } from 'react';
-import useDebounce from '@/hooks/useDebounce';
+import useDebounce from '@/hooks/use-debounce';
 import { formatDate } from '@/lib/helper';
-import { useArticlesQuery } from '../queries/article.query';
-import { type Article } from '../types/article';
-
-export type Filter = { page: number; search?: string };
+import { useGetArticlesQuery } from '../hooks/use-get-articles-query';
+import { GetArticlesProps, type Article } from '../types/article';
 
 export interface ArticleListProps {
   articles: Article[];
 }
 
-const ArticleList: React.FC<ArticleListProps> = ({ articles }) => {
+function ArticleList({ articles }: ArticleListProps) {
   if (!articles?.length) {
     return <div>No articles found</div>;
   }
@@ -89,12 +87,12 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles }) => {
       ))}
     </>
   );
-};
+}
 
-const ArticlesPage = () => {
+function ArticlesPage() {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const debouncedSearchTerm = useDebounce<string>(searchTerm, 500);
-  const filter = useMemo<Filter>(
+  const filter = useMemo<GetArticlesProps>(
     () => ({
       page: 1,
       pageSize: 10,
@@ -102,7 +100,7 @@ const ArticlesPage = () => {
     }),
     [debouncedSearchTerm]
   );
-  const { isLoading, data } = useArticlesQuery(filter);
+  const { isLoading, data } = useGetArticlesQuery(filter);
 
   return (
     <div className="container my-12 mx-auto px-4 md:px-12">
@@ -131,6 +129,6 @@ const ArticlesPage = () => {
       </div>
     </div>
   );
-};
+}
 
 export default ArticlesPage;
