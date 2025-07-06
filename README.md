@@ -55,7 +55,7 @@ pnpm install
 To run the project locally, simply execute:
 
 ```
-pnpm run dev
+pnpm dev
 ```
 
 ## Scripts
@@ -83,31 +83,45 @@ Here's a basic overview of the significant folders in the boilerplate:
 ```
 ├── public
 └── src
-  ├── components
-  ├── hooks
-  ├── lib
-  ├── pages
-  ├── routes
-  ├── services
-  ├── store
-  └── types
+    ├── components
+    ├── features
+    ├── hooks
+    ├── lib
+    ├── routes
+    ├── store
+    └── types
 ```
-
 
 | Folder      | Description                                                                                          |
 |-------------|------------------------------------------------------------------------------------------------------|
 | **`src/`**   | Contains the main source code for the application.                                                   |
-| `components`| Reusable React components, each handling a specific piece of the UI.                                  |
-| `hooks`     | Custom React hooks that encapsulate logic and behaviors which can be reused across different components.  |
-| `lib`       | Miscellaneous utility functions, helpers, and other standalone pieces of logic.                          |
-| `pages`     | Components representing full pages in the application, typically corresponding to routes.                |
-| `routes`    | Configuration and components related to routing in the application.                                     |
-| `services`  | Functions or classes that handle tasks like API calls, data processing, or other "service"-like tasks.    |
-| `store`     | Zustand st ores for state management, holding |
+| `components/ui` | Reusable UI components, each in its own folder (e.g., button, input, spinner, header).            |
+| `features`  | Feature-based modules, each with its own domain logic, pages, hooks, services, and types.             |
+| `hooks`     | Shared custom React hooks that can be used across features.                                           |
+| `lib`       | Miscellaneous utility functions, helpers, and other standalone pieces of logic.                       |
+| `routes`    | Configuration and components related to routing in the application.                                   |
+| `store`     | Zustand stores for state management.                                                                  |
+| `types`     | Shared TypeScript types and interfaces.                                                               |
 | **`public/`**   | Contains static assets like images, fonts, and the entry HTML file. Assets in this directory are served directly and are not processed by bundlers like Vite. |
 
+### Features Folder Structure
 
+The `src/features` directory is organized by feature/domain. Each feature contains its own:
+- `pages/`: Page components for that feature (used in routing)
+- `hooks/`: Feature-specific hooks
+- `services/`: API calls and business logic for the feature
+- `types/`: TypeScript types/interfaces for the feature
+- (optionally) `validation/`, `test/`, etc. for feature-specific logic
 
+Example:
+
+```
+src/features/articles/
+  ├── hooks/
+  ├── pages/
+  ├── services/
+  └── types/
+```
 
 ## Features
 

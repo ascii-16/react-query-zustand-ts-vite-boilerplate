@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate/compare/v1.1.0...v1.2.0) (2025-07-06)
+
+
+### Features
+
+* update husky hooks ([8302507](https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate/commit/830250712e991fc1ec3e4e05c16cc8b24ae8cd70))
+
+## [1.1.0](https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate/compare/v0.0.8...v1.1.0) (2025-07-06)
+
+
+### Features
+
+* app provider ([a3ea10f](https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate/commit/a3ea10f70935904373f835c3fc178646ee1cd3e7))
+* change mock data array length ([51b101e](https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate/commit/51b101e389290538a8322162953a407b298fe548))
+* change version ([39cbb76](https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate/commit/39cbb767e6a678150fce22709c2fc6ad20da5ee1))
+* mock api call ([26b9ae7](https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate/commit/26b9ae76b7ae54ea25e6f36b2a3025b386b42978))
+* remove eslintignore ([c60b09a](https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate/commit/c60b09ac2a8549afc25d0ea9d3fc335e7f80f4c7))
+* replace placeholder image ([e086d2f](https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate/commit/e086d2f24aecd70bc2873bef385ec21dc59908c0))
+* ui changes ([2b65bac](https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate/commit/2b65bac1faff08fbd3f707b48f0b5a54868391ab))
+* update README ([599fcec](https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate/commit/599fcec13ebbf4bd649fc778067bd2354c04fadb))
+
+### [0.0.5](https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate/compare/v0.0.4...v0.0.5) (2025-07-04)
+
 ### [0.0.8](https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate/compare/v0.0.7...v0.0.8) (2025-07-04)
 
 ### [0.0.7](https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate/compare/v0.0.6...v0.0.7) (2025-07-04)
