@@ -26,7 +26,7 @@ export async function getArticles(
     image_url: 'https://placehold.co/600x400',
   });
 
-  const results = Array.from({ length: 10 }, (_, i) =>
+  const results = Array.from({ length: 9 }, (_, i) =>
     generateMockArticle((page - 1) * 10 + i)
   );
 
