@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate/compare/v1.1.0...v1.2.0) (2025-07-06)
+
+
+### Features
+
+* update husky hooks ([8302507](https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate/commit/830250712e991fc1ec3e4e05c16cc8b24ae8cd70))
+
 ## [1.1.0](https://github.com/akhil-neoito/react-query-zustand-ts-vite-boilerplate/compare/v0.0.8...v1.1.0) (2025-07-06)
 
 
