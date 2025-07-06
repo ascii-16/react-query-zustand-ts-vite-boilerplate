@@ -9,22 +9,16 @@ export interface ButtonProps
 }
 
 const defaultClasses = `
-    text-white
-    bg-blue-700
-    hover:bg-blue-800 
-    focus:ring-4 
-    focus:ring-blue-300 
-    font-medium 
-    rounded-lg 
-    text-sm 
-    px-5 py-2.5 
-    text-center 
-    mr-2 mb-2
-    dark:bg-blue-600
-    dark:hover:bg-blue-700
-    dark:focus:ring-blue-800 
-    min-w-[100px]
-  `;
+  inline-flex items-center justify-center
+  rounded-md
+  text-sm font-normal
+  ring-offset-background transition-colors
+  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2
+  disabled:opacity-50 disabled:pointer-events-none
+  bg-transparent text-blue-500 hover:bg-blue-400 hover:text-white
+  border border-blue-500 hover:border-blue-400
+  h-10 px-4 py-2
+`;
 
 export default function Button({
   text,
