@@ -1,8 +1,9 @@
-import type {
-  UseMutationOptions,
-  UseMutationResult,
-  UseQueryOptions,
-  UseQueryResult,
+import {
+  QueryClient,
+  type UseMutationOptions,
+  type UseMutationResult,
+  type UseQueryOptions,
+  type UseQueryResult,
 } from '@tanstack/react-query';
 
 export type QueryHandler<TData, TParams = void> = [TParams] extends [void]
@@ -20,3 +21,5 @@ export type MutationHandler<TData, TVariables> = (
     'mutationFn' | 'mutationKey'
   >
 ) => UseMutationResult<TData, Error, TVariables>;
+
+export const queryClient = new QueryClient();
